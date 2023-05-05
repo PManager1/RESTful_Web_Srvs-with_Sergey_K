@@ -8,7 +8,7 @@ public class HelloController {
 
     @RequestMapping( "/hello" )
     public String echo() {
-        return "Hello World! - from Hello contro";
+        return "Hello World! - from Hello controller";
     }
 
 }
