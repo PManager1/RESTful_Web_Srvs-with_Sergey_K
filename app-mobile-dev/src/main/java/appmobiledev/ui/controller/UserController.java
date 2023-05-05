@@ -3,17 +3,17 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-//@RequestMapping("users")
+@RequestMapping("/users")
 public class UserController {
 
-    @GetMapping("/users")
+    @GetMapping
     public String getUser(){
         return "hello Get user method was called";
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public String createUser(){
-        return "create user was called";
+        return "create user was called-2";
     }
     @PutMapping
     public String updateUser (){
