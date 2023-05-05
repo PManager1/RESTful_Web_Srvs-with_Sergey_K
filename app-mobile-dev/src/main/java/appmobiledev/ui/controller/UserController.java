@@ -11,9 +11,9 @@ public class UserController {
         return "hello Get user method was called";
     }
 
-    @PostMapping
+    @PostMapping("/users")
     public String createUser(){
-        return "create user  called";
+        return "create user was called";
     }
     @PutMapping
     public String updateUser (){
