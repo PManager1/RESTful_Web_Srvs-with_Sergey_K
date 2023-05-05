@@ -1,5 +1,6 @@
 package appmobiledev.ui.controller;
 import appmobiledev.ui.model.request.UserDetailsRequestModel;
+import appmobiledev.ui.model.response.UserRest;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -18,10 +19,10 @@ public class UserController {
 //
 
     @PostMapping
-    public String createUser(@RequestBody UserDetailsRequestModel userDetails){
-        return "create user was called-3";
+    public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails){
+        return null;
     }
-    
+
     @PutMapping
     public String updateUser (){
         return "update user was called ";
