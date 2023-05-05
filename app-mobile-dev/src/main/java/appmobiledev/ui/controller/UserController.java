@@ -3,7 +3,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UserController {
 
     @GetMapping
