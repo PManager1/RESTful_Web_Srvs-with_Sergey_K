@@ -1,24 +1,34 @@
-package appmobiledev.shared.dto;
+package appmobiledev.io.entity;
+
 import java.io.Serializable;
+import javax.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-// Data transfer object is a design pattern,
-// DTO) is an object that carries data between processes. When you’re working with a remote interface,
-// each call is expensive. As a result, you need to reduce the number of calls. The solution is to create a
-// Data Transfer Object that can hold all the data for the call.
+@Entity(name="users")
+public class UserEntity  implements Serializable {
 
-public class UserDto implements Serializable {
-    private static final long serialVersionUID = 2000L;
+    private static final long serialVersionUID = 2324234234L;
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column(nullable=false)
     private String userId;
+    @Column(nullable=false, length = 50)
     private String firstName;
+    @Column(nullable=false, length = 50)
     private String lastName;
+    @Column(nullable=false, length = 100)
     private String email;
-    private String password;
-    private String encryptedPAssword;
+    @Column(nullable=false)
+    private String encryptedPassword;
     private String emailVerificationToken;
+    @Column(nullable=false )
     private Boolean emailVerificationStatus= false;
 
-//    private List<AddressDTO> addresses;
 
 
     public long getId() {
@@ -61,20 +71,12 @@ public class UserDto implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEncryptedPassword() {
+        return encryptedPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEncryptedPAssword() {
-        return encryptedPAssword;
-    }
-
-    public void setEncryptedPAssword(String encryptedPAssword) {
-        this.encryptedPAssword = encryptedPAssword;
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
     }
 
     public String getEmailVerificationToken() {
@@ -85,11 +87,11 @@ public class UserDto implements Serializable {
         this.emailVerificationToken = emailVerificationToken;
     }
 
-    public String getEmailVerificationStatus() {
+    public Boolean getEmailVerificationStatus() {
         return emailVerificationStatus;
     }
 
-    public void setEmailVerificationStatus(String emailVerificationStatus) {
+    public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
         this.emailVerificationStatus = emailVerificationStatus;
     }
 }
